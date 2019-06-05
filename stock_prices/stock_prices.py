@@ -37,10 +37,22 @@ def iterative_profit(prices):
     #             pass
     #     i -= 1
     #     return current_max_profit
-    count = len(prices) - 1
-    while count >= 0:
-        print(prices[count])
-        count -= 1
+
+
+#     count = len(prices) - 1
+#     while count >= 0:
+#         print(prices[count])
+#         count -= 1
+
+# iterative_profit([1050, 270, 1540, 3800, 2])
+
+    newer_price = len(prices) - 1
+    older_price = len(prices) -2
+    while newer_price >= 0 and older_price >= 0:
+        print("newer_price: ", prices[newer_price])
+        print("older_price: ", prices[older_price])
+        newer_price -= 1
+        older_price -= 1
 
 iterative_profit([1050, 270, 1540, 3800, 2])
 
