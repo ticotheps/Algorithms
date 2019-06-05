@@ -33,9 +33,18 @@
 #  - Traverse the profits_list to find the largest number.
 #  - Return that number.
 
-
-
 def iterative_profit(prices):
+    profits_list = []
+    for i in range(0, len(prices)):
+        for j in range(1, len(prices)):
+            profits_list.append(prices[j] - prices[i])
+            j += 1
+        i += 1
+    
+    return profits_list
+
+print(iterative_profit([1050, 270, 1540, 3800, 2]))
+
     # latest_price = len(prices) - 1
     # previous_price = len(prices) - 2
     # for i in range(stock_prices[latest_price], 0):
