@@ -45,12 +45,14 @@ def iterative_profit(prices):
 #         count -= 1
 
 # iterative_profit([1050, 270, 1540, 3800, 2])
-
+    difference = 0
     newer_price = len(prices) - 1
     older_price = len(prices) -2
     while newer_price >= 0 and older_price >= 0:
-        print("newer_price: ", prices[newer_price])
-        print("older_price: ", prices[older_price])
+        # print("newer_price: ", prices[newer_price])
+        # print("older_price: ", prices[older_price])
+        difference = prices[newer_price] - prices[older_price]
+        print(difference)
         newer_price -= 1
         older_price -= 1
 
