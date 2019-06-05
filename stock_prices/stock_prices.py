@@ -22,8 +22,8 @@
 #  Iterative Approach: 
 
 def iterative_profit(prices):
-    # latest_price = len(stock_prices) - 1
-    # previous_price = len(stock_prices) - 2
+    # latest_price = len(prices) - 1
+    # previous_price = len(prices) - 2
     # for i in range(stock_prices[latest_price], 0):
     #     current_max_profit = 0
     #     for j in range(stock_prices[previous_price], 0):
@@ -38,7 +38,7 @@ def iterative_profit(prices):
     #     i -= 1
     #     return current_max_profit
     count = len(prices) - 1
-    while count > 0:
+    while count >= 0:
         print(prices[count])
         count -= 1
 
