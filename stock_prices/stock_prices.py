@@ -10,6 +10,7 @@
 
 #  Clarifying Questions:
 
+#  Can we assume that the list will be sorted?
 #  Can we ever have a list with 0 items in it?
 #  Can we ever have a list with negative numbers in it?
 #  Can we assume that items in the list cannot be repeated?
@@ -20,6 +21,19 @@
 #-------------------Devising a Plan----------------------
 
 #  Iterative Approach: 
+
+
+#  - Create a new empty "profits_list" that will hold all the values of the
+#    different possible profits.
+#  - Use a for loop to find the "profits" (positive difference) between each 
+#    current_number (older price) and each compared_number (newer price) to 
+#    the right of it.
+#  - Store each difference (compared_number - current_number = difference) inside
+#    the new empty "profits_list".
+#  - Traverse the profits_list to find the largest number.
+#  - Return that number.
+
+
 
 def iterative_profit(prices):
     # latest_price = len(prices) - 1
@@ -45,18 +59,21 @@ def iterative_profit(prices):
 #         count -= 1
 
 # iterative_profit([1050, 270, 1540, 3800, 2])
-    difference = 0
-    newer_price = len(prices) - 1
-    older_price = len(prices) -2
-    while newer_price >= 0 and older_price >= 0:
-        # print("newer_price: ", prices[newer_price])
-        # print("older_price: ", prices[older_price])
-        difference = prices[newer_price] - prices[older_price]
-        print(difference)
-        newer_price -= 1
-        older_price -= 1
+#     difference = 0
+#     newer_price = len(prices) - 1
+#     older_price = len(prices) -2
+#     while newer_price >= 0 and older_price >= 0:
+#         # print("newer_price: ", prices[newer_price])
+#         # print("older_price: ", prices[older_price])
+#         difference = prices[newer_price] - prices[older_price]
+#         print(difference)
+#         newer_price -= 1
+#         older_price -= 1
 
-iterative_profit([1050, 270, 1540, 3800, 2])
+# iterative_profit([1050, 270, 1540, 3800, 2])
+
+
+
 
 
 #  Recursive Approach: 
