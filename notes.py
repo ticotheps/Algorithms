@@ -87,6 +87,8 @@
 #  a^b == a * a^(b-1)
 
 #----------------------Planning Phase----------------------------
+
+#----------------------Analyzing Phase----------------------------
 #  Iterative approach:
 
     #  O(n) time complexity
