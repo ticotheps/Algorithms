@@ -33,8 +33,10 @@
 #  - Traverse the profits_list to find the largest number.
 #  - Return that number.
 
-def iterative_profit(prices):
-    current_max_profit = 0
+#-------------------Execute the Plan----------------------
+
+def find_max_profit(prices):
+    current_max_profit = int(-9 * 10^1000000000)
     last_index = len(prices) - 1
     list_length = len(prices)
     for i in range(0, list_length):
@@ -55,49 +57,10 @@ def iterative_profit(prices):
                 
     return current_max_profit
 
-print(iterative_profit([1050, 270, 1540, 3800, 2]))
+print(find_max_profit([1050, 270, 1540, 3800, 2]))
+print(find_max_profit([100, 90, 80, 50, 20, 10]))
 
-    # latest_price = len(prices) - 1
-    # previous_price = len(prices) - 2
-    # for i in range(stock_prices[latest_price], 0):
-    #     current_max_profit = 0
-    #     for j in range(stock_prices[previous_price], 0):
-    #         difference = stock_prices[i] - stock_prices[j]
-    #         if difference > 0:
-    #             if current_max_profit < difference:
-    #                 current_max_profit = difference
-    #             elif current_max_profit >= difference:
-    #                 j -= 1
-    #         elif difference < 0:
-    #             pass
-    #     i -= 1
-    #     return current_max_profit
-
-
-#     count = len(prices) - 1
-#     while count >= 0:
-#         print(prices[count])
-#         count -= 1
-
-# iterative_profit([1050, 270, 1540, 3800, 2])
-#     difference = 0
-#     newer_price = len(prices) - 1
-#     older_price = len(prices) -2
-#     while newer_price >= 0 and older_price >= 0:
-#         # print("newer_price: ", prices[newer_price])
-#         # print("older_price: ", prices[older_price])
-#         difference = prices[newer_price] - prices[older_price]
-#         print(difference)
-#         newer_price -= 1
-#         older_price -= 1
-
-# iterative_profit([1050, 270, 1540, 3800, 2])
-
-
-
-
-
-#  Recursive Approach: 
+# #  Recursive Approach: 
 
 # import argparse
 
