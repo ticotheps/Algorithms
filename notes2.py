@@ -76,5 +76,37 @@ for i in range(8):
     print(f'{i}: {fib_bottom_up(i)}')
 
 
+#-----------------ANAGRAM EXAMPLE------------------
+#  anagram = a word that, when the letters are re-arranged, forms another word.
+
+#  example: "actors" and "costar"  <== 2 anagrams
+#  example_2: "gallery", "regally", "largely", "allergy"  <== 4 anagrams
+#  example_3: "abets", "baste", "betas", "beast", "beats"  <== 5 anagrams
+
+#  Find the largest number of anagrams in a given list.
+
+#  For all the words: 
+#      -Compute the alphabetical form, make all lower-case
+#      -If two words have the same alphabetical form, add 
+#       those words to the set keyed on that new alphabetical form.
+
+def anagrams_func(words):
+    anagrams = {}  
+      
+    for word in words:
+        alphabetized_form = "".join(sorted(word.lower()))
+        print(f'Word: {word}; Alphabetized_Form: {alphabetized_form}')
+        
+        if alphabetized_form not in anagrams:
+            anagrams[alphabetized_form] = []
+        
+        anagrams[alphabetized_form].append(word)
+
+f = open('words.text', 'r')
+words = f.read().split("\n")
+f.close()
+
+anagrams_func(words)
+
 
     
