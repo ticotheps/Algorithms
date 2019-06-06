@@ -17,14 +17,19 @@
 
 #--------------Devise a Plan-----------------
 
+#---------Top Down Dynamic Programming----------
+#  It's called "top down" because our target value starts at the top
+#  of the array when searching for that target value.
+
 import sys
 
 sys.setrecursionlimit(40010)
 
 def fib(n):
+    #  "memoization" => adding a cache to an algorithm
     cache = {}
 
-    def fib_inner(n):  #  O(2^n)
+    def fib_inner(n):  #  O(2^n) without cache
         nonlocal cache  #  tells python that fib_inner() wants a cache 
         #                  variable outside of the it's own scope
         # TODO make sure n is non-negative 
