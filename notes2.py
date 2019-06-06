@@ -95,7 +95,7 @@ def anagrams_func(words):
       
     for word in words:
         alphabetized_form = "".join(sorted(word.lower()))
-        print(f'Word: {word}; Alphabetized_Form: {alphabetized_form}')
+        # print(f'Word: {word}; Alphabetized_Form: {alphabetized_form}')
         
         if alphabetized_form not in anagrams:
             anagrams[alphabetized_form] = []
