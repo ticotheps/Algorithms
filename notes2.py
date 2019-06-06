@@ -77,7 +77,12 @@ for i in range(8):
 
 
 #-----------------ANAGRAM EXAMPLE------------------
-#  anagram = a word that, when the letters are re-arranged, forms another word.
+#  Questions to ask:
+#     -What is an "anagram"?
+#         Anagram = a word that, when the letters are re-arranged, forms another word.
+#     -How do we determine if two words are anagrams?
+#         If two words have the same number of each letter present in the word, they are
+#         anagrams of each other.
 
 #  example: "actors" and "costar"  <== 2 anagrams
 #  example_2: "gallery", "regally", "largely", "allergy"  <== 4 anagrams
