@@ -17,11 +17,16 @@
 
 #--------------Devise a Plan-----------------
 
+import sys
+
+sys.setrecursionlimit(40010)
+
 def fib(n):
     cache = {}
 
     def fib_inner(n):  #  O(2^n)
-        nonlocal cache
+        nonlocal cache  #  tells python that fib_inner() wants a cache 
+        #                  variable outside of the it's own scope
         # TODO make sure n is non-negative 
         if n == 0:
             return 0
@@ -39,8 +44,8 @@ def fib(n):
     #  first have to get the 9th Fib number, which requires us to get
     #  the 8th Fib number, and so forth, until we get the 0th Fib number. 
     #  HOW DO WE MAKE IT FASTER?
-    #    MAKE A CACHE!
-for i in range(40):
+    #    MAKE A CACHE! => this will improve Big O to O(n)! :)
+for i in range(40000):
     print(f'{i}: {fib(i)}')
 
     
