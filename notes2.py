@@ -17,13 +17,13 @@
 
 #--------------Devise a Plan-----------------
 
-#---------Top Down Dynamic Programming----------
+#---------Top Down/Memoization Dynamic Programming----------
 #  It's called "top down" because our target value starts at the top
 #  of the array when searching for that target value.
 
 import sys
 
-sys.setrecursionlimit(40010)
+sys.setrecursionlimit(40000)
 
 def fib(n):
     #  "memoization" => adding a cache to an algorithm
@@ -43,14 +43,38 @@ def fib(n):
         return cache[n]
 
     return fib_inner(n)
-      
-    #  This for loop is REALLY slow because we are doing redundant
-    #  calculations. For example, if we want the 10th Fib number, we
-    #  first have to get the 9th Fib number, which requires us to get
-    #  the 8th Fib number, and so forth, until we get the 0th Fib number. 
-    #  HOW DO WE MAKE IT FASTER?
-    #    MAKE A CACHE! => this will improve Big O to O(n)! :)
-for i in range(40000):
+
+#  This for loop is REALLY slow because we are doing redundant
+#  calculations. For example, if we want the 10th Fib number, we
+#  first have to get the 9th Fib number, which requires us to get
+#  the 8th Fib number, and so forth, until we get the 0th Fib number. 
+#  HOW DO WE MAKE IT FASTER?
+#    MAKE A CACHE! => this will improve Big O to O(n)! :)
+for i in range(40):
     print(f'{i}: {fib(i)}')
+    
+#---------Bottom-Up Dynamic Programming----------
+
+def fib_bottom_up(n):
+    if n == 0:
+        return 0
+    if n == 1:
+        return 1
+    
+    pprev = 0
+    prev = 1
+    
+    i = 2
+    while i < n:
+        pprev, prev = prev, prev + pprev
+        i += 1
+    
+    return prev
+        
+#  This is the OPTIMUM Fib sequence algorithm
+for i in range(8):
+    print(f'{i}: {fib_bottom_up(i)}')
+
+
 
     
