@@ -35,12 +35,21 @@
 
 def iterative_profit(prices):
     profits_list = []
-    for i in range(0, len(prices)):
-        for j in range(1, len(prices)):
-            profits_list.append(prices[j] - prices[i])
-            j += 1
-        i += 1
-    
+    last_index = len(prices) - 1
+    list_length = len(prices)
+    for i in range(0, list_length):
+        if i > last_index - 1:
+            break
+        for j in range(i+1, list_length):
+            if j > list_length:
+                break
+            elif prices[j] == prices[i]:
+                break
+            else:
+                profits_list.append(prices[j] - prices[i])
+                j += 1
+        
+
     return profits_list
 
 print(iterative_profit([1050, 270, 1540, 3800, 2]))
