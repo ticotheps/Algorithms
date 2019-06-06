@@ -18,14 +18,29 @@
 #--------------Devise a Plan-----------------
 
 def fib(n):
-    # TODO make sure n is non-negative 
-    if n == 0:
-        return 0
-    if n == 1:
-        return 1
-    
-    return fib(n-1) + fib(n-2)
-  
+    cache = {}
+
+    def fib_inner(n):  #  O(2^n)
+        nonlocal cache
+        # TODO make sure n is non-negative 
+        if n == 0:
+            return 0
+        if n == 1:
+            return 1
+        if n not in cache:
+            cache[n] = fib_inner(n-1) + fib_inner(n-2)
+            
+        return cache[n]
+
+    return fib_inner(n)
+      
+    #  This for loop is REALLY slow because we are doing redundant
+    #  calculations. For example, if we want the 10th Fib number, we
+    #  first have to get the 9th Fib number, which requires us to get
+    #  the 8th Fib number, and so forth, until we get the 0th Fib number. 
+    #  HOW DO WE MAKE IT FASTER?
+    #    MAKE A CACHE!
 for i in range(40):
     print(f'{i}: {fib(i)}')
+
     
