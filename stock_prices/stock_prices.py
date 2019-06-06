@@ -49,7 +49,6 @@ def iterative_profit(prices):
                 profits_list.append(prices[j] - prices[i])
                 j += 1
         
-
     return profits_list
 
 print(iterative_profit([1050, 270, 1540, 3800, 2]))
